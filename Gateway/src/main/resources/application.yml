@@ -1,0 +1,63 @@
+server:
+  port: 4444
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      default-filters:
+       - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - "*"
+            allowed-headers:
+              - "*"
+      routes:
+      - id: mmt
+        uri: lb://MAKE-MY-TRIP
+        predicates:
+        - Path=/MMT/**
+
+      - id: shivshahi
+        uri: lb://SHIVSHAHI
+        predicates:
+        - Path=/SS/**     
+      
+      - id: mahalaxmi
+        uri: lb://MAHALAXMI
+        predicates:
+        - Path=/ML/**
+
+     
+      - id: Indigo
+        uri: lb://INDIGO
+        predicates:
+        - Path=/IN/**
+        
+      - id: Airindia
+        uri: lb://AIRINDIA
+        predicates:
+        - Path=/AI/**
+        
+
+     
+  main:
+    web-application-type: reactive
+
+                   
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:1111/
+        
+
+
+      

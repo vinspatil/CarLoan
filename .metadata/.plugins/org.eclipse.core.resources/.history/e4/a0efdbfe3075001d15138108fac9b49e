@@ -1,0 +1,17 @@
+package com.DreamCar.app.reg.service;
+
+import java.util.List;
+
+import com.EnquiryFormApplication.app.model.CustomerEnquiry;
+
+public interface EnquiryServiceInterface {
+
+	void postEnquiry(CustomerEnquiry ce);
+
+	List<CustomerEnquiry> getEnquiry();
+
+	void deleteEnquiry(Integer id);
+
+	CustomerEnquiry updateEnquiry(CustomerEnquiry ce,Integer id);
+
+}

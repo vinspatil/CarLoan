@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.DreamCar.app.regserviceimpl&apos; to &apos;com.DreamCar.app.reg.serviceimpl&apos;&#x0D;&#x0A;- Original project: &apos;Enquiry_API&apos;&#x0D;&#x0A;- Original element: &apos;Enquiry_API/src/main/java/com.DreamCar.app.regserviceimpl&apos;&#x0D;&#x0A;- Renamed element: &apos;Enquiry_API/src/main/java/com.DreamCar.app.reg.serviceimpl&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.DreamCar.app.regserviceimpl&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.DreamCar.app.regserviceimpl" name="com.DreamCar.app.reg.serviceimpl" qualified="false" references="true" stamp="1670310636972" textual="false" version="1.0"/>
+</session>

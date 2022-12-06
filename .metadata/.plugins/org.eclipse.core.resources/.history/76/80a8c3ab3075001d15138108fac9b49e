@@ -1,0 +1,50 @@
+package com.EnquiryFormApplication.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.EnquiryFormApplication.app.model.CustomerEnquiry;
+import com.EnquiryFormApplication.app.serviceI.EnquiryServiceInterface;
+
+@RestController
+public class EnquiryController {
+
+	@Autowired
+	EnquiryServiceInterface esi;
+	
+	@PostMapping(value="/postEnquiry")
+	public String postEnquiry(@RequestBody CustomerEnquiry ce)
+	{
+		esi.postEnquiry(ce);
+		return "success";
+	}
+	
+	@GetMapping(value="/getEnquiry")
+	public List<CustomerEnquiry> getEnquiry()
+	{
+		
+		List<CustomerEnquiry> list=esi.getEnquiry();
+		return list;
+	}
+	
+	@DeleteMapping(value="/deleteEnquiry/{custId}")
+	public String deleteEnquiry( @PathVariable("custId") Integer id)
+	{
+		esi.deleteEnquiry(id);
+		return "deleted";
+	}
+	
+	@PutMapping(value="/updateEnquiry/{custId}")
+	public CustomerEnquiry updateEnquiry(@RequestBody CustomerEnquiry ce,@PathVariable("custId") Integer id)
+	{
+		return esi.updateEnquiry(ce,id);
+	}
+}

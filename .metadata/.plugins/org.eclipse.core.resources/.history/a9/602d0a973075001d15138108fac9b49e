@@ -1,0 +1,12 @@
+package com.EnquiryFormApplication.app.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.EnquiryFormApplication.app.model.CustomerEnquiry;
+
+@Repository
+public interface EnquiryRepository extends JpaRepository<CustomerEnquiry, Integer>{
+
+	
+}
