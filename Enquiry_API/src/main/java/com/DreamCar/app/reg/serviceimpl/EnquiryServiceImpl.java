@@ -48,7 +48,9 @@ public class EnquiryServiceImpl implements EnquiryServiceInterface{
 			   cse.setEmailId(ce.getEmailId());
 			   cse.setAge(ce.getAge());
 			   cse.setMbNo(ce.getMbNo());
-			   cse.setPanCardNo(ce.getPanCardNo());
+			   cse.setPancardNo(ce.getPancardNo());
+			   cse.setStatus(ce.getStatus());
+			   cse.setCibil(ce.getCibil());	 
 			   
 			   return er.save(cse);
 			   

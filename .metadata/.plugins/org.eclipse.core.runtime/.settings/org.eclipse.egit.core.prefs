@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=E\:\\Project\\EnquiryFormApplication\\.git;
-GitRepositoriesView.GitDirectories.relative=EnquiryFormApplication\\.git;
+GitRepositoriesView.GitDirectories=E\:\\Project\\EnquiryFormApplication\\.git;E\:\\Project\\.git;
+GitRepositoriesView.GitDirectories.relative=EnquiryFormApplication\\.git;.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

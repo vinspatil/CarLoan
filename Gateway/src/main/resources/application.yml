@@ -1,5 +1,5 @@
 server:
-  port: 4444
+  port: 8081
 spring:
   application:
     name: Gateway
@@ -20,31 +20,31 @@ spring:
             allowed-headers:
               - "*"
       routes:
-      - id: mmt
-        uri: lb://MAKE-MY-TRIP
+      - id: enquiry
+        uri: lb://CUSTOMER-ENQUIRY
         predicates:
-        - Path=/MMT/**
+        - Path=/enquiry/**
 
-      - id: shivshahi
-        uri: lb://SHIVSHAHI
-        predicates:
-        - Path=/SS/**     
-      
-      - id: mahalaxmi
-        uri: lb://MAHALAXMI
-        predicates:
-        - Path=/ML/**
-
-     
-      - id: Indigo
-        uri: lb://INDIGO
-        predicates:
-        - Path=/IN/**
-        
-      - id: Airindia
-        uri: lb://AIRINDIA
-        predicates:
-        - Path=/AI/**
+#      - id: shivshahi
+#        uri: lb://SHIVSHAHI
+#        predicates:
+#        - Path=/SS/**     
+#      
+#      - id: mahalaxmi
+#        uri: lb://MAHALAXMI
+#        predicates:
+#        - Path=/ML/**
+#
+#     
+#      - id: Indigo
+#        uri: lb://INDIGO
+#        predicates:
+#        - Path=/IN/**
+#        
+#      - id: Airindia
+#        uri: lb://AIRINDIA
+#        predicates:
+#       - Path=/AI/**
         
 
      

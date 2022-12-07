@@ -1,5 +1,6 @@
 package com.DreamCar.app.reg.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -21,9 +22,12 @@ public class CustomerEnquiry {
 	private Integer custId;
 	private String firstName;
 	private String lastName;
+	private String status;
 	private Long mbNo;
 	private String emailId;
 	private Integer age;
-	private Long panCardNo;
+	private Long pancardNo;
+	private int cibil;
+
 
 }

@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.hibernate.loader.custom.CustomQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DreamCar.app.reg.model.CustomerEnquiry;
@@ -17,6 +19,8 @@ import com.DreamCar.app.reg.service.EnquiryServiceInterface;
 
 
 @RestController
+@CrossOrigin
+@RequestMapping("/enquiry")
 public class EnquiryController {
 
 	@Autowired
@@ -29,7 +33,7 @@ public class EnquiryController {
 		return "Success";
 	}
 	
-	@GetMapping(value="/getEnquiry")
+	@GetMapping(value="/getEnquiryList")
 	public List<CustomerEnquiry> getEnquiry()
 	{		
 		List<CustomerEnquiry> list=esi.getEnquiry();
@@ -38,8 +42,7 @@ public class EnquiryController {
 	
 	@DeleteMapping(value="/deleteEnquiry/{custId}")
 	public String deleteEnquiry( @PathVariable("custId") Integer id)
-	{
-		esi.deleteEnquiry(id);
+	{	esi.deleteEnquiry(id);
 		return "deleted";
 	}
 	
