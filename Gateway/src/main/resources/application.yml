@@ -24,16 +24,22 @@ spring:
         uri: lb://CUSTOMER-ENQUIRY
         predicates:
         - Path=/enquiry/**
-
-#      - id: shivshahi
-#        uri: lb://SHIVSHAHI
-#        predicates:
-#        - Path=/SS/**     
-#      
-#      - id: mahalaxmi
-#        uri: lb://MAHALAXMI
-#        predicates:
-#        - Path=/ML/**
+        
+        
+      - id: login
+        uri: lb://LOGIN
+        predicates:
+        - Path=/login/**
+        
+      - id: registration
+        uri: lb://EMPLOYEE-REGISTRATION
+        predicates:
+        - Path=/reg/**     
+      
+      - id: report
+        uri: lb://REPORT
+        predicates:
+        - Path=/report/**
 #
 #     
 #      - id: Indigo

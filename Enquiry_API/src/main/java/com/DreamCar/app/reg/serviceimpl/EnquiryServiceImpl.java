@@ -50,14 +50,19 @@ public class EnquiryServiceImpl implements EnquiryServiceInterface{
 			   cse.setMbNo(ce.getMbNo());
 			   cse.setPancardNo(ce.getPancardNo());
 			   cse.setStatus(ce.getStatus());
-			   cse.setCibil(ce.getCibil());	 
-			   
-			   return er.save(cse);
-			   
+			   cse.setCibil(ce.getCibil());				   
+			   return er.save(cse);		   
 		}
 		else
 		{
 			return null;
 		}
+	}
+
+	@Override
+	public CustomerEnquiry Enquiry(Integer id) {
+	
+		Optional<CustomerEnquiry> find = er.findById(id);
+		return find.get();
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,20 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.DreamCar.app.cibil.mapping.InterestCalculation;
 
+
+
 @RestController
 public class CibilController {
 	
-	@PostMapping("/creditscore/{panNO}")
-	public ResponseEntity<Integer> getCreditScore(@PathVariable String panNO){
+	@GetMapping("/creditscore")
+	public ResponseEntity<Integer> getCreditScore(){
 		int min = 600;  
 		int max = 900;  
 		Random r=new Random();
-		int showMe = r.nextInt(min, max);
-		//Generate random double value from 200 to 400   
-		//System.out.println("Random value of type double between "+min+" to "+max+ ":");  
-		double a = Math.random()*(max-min+1)+min;   
-		System.out.println(a);  
-		int aa=(int)a;
+		int showMe = r.nextInt(min, max);	
 		return new ResponseEntity<>(showMe, HttpStatus.OK);
 	}
 	@PostMapping("/getAmount")

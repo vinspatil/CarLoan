@@ -16,4 +16,6 @@ public interface EnquiryServiceInterface {
 
 	CustomerEnquiry updateEnquiry(CustomerEnquiry ce,Integer id);
 
+	CustomerEnquiry Enquiry(Integer id);
+
 }
