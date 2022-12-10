@@ -24,6 +24,9 @@ import freemarker.template.Template;
 public class MailController {
 
 	@Autowired
+	CustomerService s;
+
+	@Autowired
 	MailServiceInterface msi;
 	
 	@Autowired
@@ -66,6 +69,65 @@ public class MailController {
 	}
 	
 
+	@PostMapping("/saveEmi")
+	public ResponseEntity<Integer> saveData(@RequestBody Customer c) {
+		Integer saveData = s.saveData(c);
+		return new ResponseEntity<>(saveData, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/exel/{id}")
+	public void getExcl(HttpServletResponse responce,@PathVariable Integer id )throws Exception {
+		responce.setContentType("application/octet-stream");
+		String hk="Content-Disposition";
+		String val="attachment;filename=data.xls";
+		responce.setHeader(hk, val);
+		s.ganarateExl(responce, id);
+	}
+	@GetMapping("/genPdf/{id}")
+	public void getPdf(HttpServletResponse response,@PathVariable Integer id)throws Exception {
+		response.setContentType("application/pdf");
+		String customer = s.findCustomer(id);
+		String hk="Content-Disposition";
+		String val="attachment;filename="+customer+".pdf";
+		
+		response.setHeader(hk, val);
+		s.ganaratePdf(response, id);
+		main();
+	}
+	public static void main() {
+		System.out.println("kjahbcjkahsc aschasiudasd aihciaushcasc ah cash");
+		MailSender m=new MailSender();
+		m.setFromEmail(username);
+		m.setToEmail("prafull.sawake@gmail.com");
+		m.setSubject("klsdkjd osjvisjv sojvshv sojvsidj sjisj ");
+		m.setTxtmsg("sksmvksknv svmkmv svjks sv s");
+		HomeController h=new HomeController();
+		try {
+			h.s.sendMailWithAttachment(m);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@PutMapping("/update/{date}/{id}")
+	public ResponseEntity<String> updateStatus(@PathVariable String date,@PathVariable Integer id) {
+		LocalDate parse = LocalDate.parse(date);
+		s.updateStatus(id,parse);
+		return new ResponseEntity<>("Status Update", HttpStatus.OK);
+	}
+	@GetMapping("/defa/{id}")
+	public ResponseEntity<Boolean> findDefaulder(@PathVariable Integer id) {
+		String a = s.findDefaulterCustomer(id);
+		System.out.println("hwjbegdahd"+a);
+		boolean msg;
+		if(a=="") {
+			msg=false;
+		}else {
+			msg=true;
+		}
+		
+		return new ResponseEntity<>(msg, HttpStatus.OK);
+	}
 	
 	
 }
