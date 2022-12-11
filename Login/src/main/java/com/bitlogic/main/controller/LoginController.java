@@ -32,7 +32,7 @@ public class LoginController {
 	@Autowired
 	LoginServiceI ls;
 	
-// Post API for register
+// Post API for registers
 
 	@PostMapping(value = "/register", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<LoginEntity> postLogin(@RequestParam("photo") MultipartFile photo, @RequestPart("name") String name,@RequestPart("username") String username,@RequestPart("email") String email,@RequestPart("password") String password,@RequestPart("role") String role )
@@ -94,7 +94,7 @@ public class LoginController {
 		catch(Exception e)
 		{
 			e.printStackTrace();
-		}
+		} 
 		return new ResponseEntity<LoginEntity>(L,HttpStatus.OK);
 	}
 	

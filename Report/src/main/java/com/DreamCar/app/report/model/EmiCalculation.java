@@ -1,4 +1,4 @@
-package com.bitlogic.customerregister.app.model;
+package com.DreamCar.app.report.model;
 
 import java.time.LocalDate;
 

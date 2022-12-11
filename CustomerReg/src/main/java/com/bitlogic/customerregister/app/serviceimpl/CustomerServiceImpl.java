@@ -102,5 +102,13 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return false;
 	}
+	@Override
+	public SanctionLetter getSanction(Integer id) {
+		Optional<Customer> cust = custoRepo.findById(id);
+		Customer Ap = cust.get();
+		SanctionLetter sanction = Ap.getSanctionletter();
+		
+		return sanction;
+	}
 
 }

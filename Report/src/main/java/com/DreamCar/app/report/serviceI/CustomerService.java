@@ -1,11 +1,13 @@
-package com.bitlogic.customerregister.app.service;
+package com.DreamCar.app.report.serviceI;
 
 import java.time.LocalDate;
 
 import javax.servlet.http.HttpServletResponse;
 
-import com.bitlogic.customerregister.app.binding.Customer;
-import com.bitlogic.customerregister.app.binding.MailSender;
+import com.DreamCar.app.report.Dto.Customer;
+import com.DreamCar.app.report.Dto.MailSender;
+
+
 
 public interface CustomerService {
 	public Integer saveData(Customer c);

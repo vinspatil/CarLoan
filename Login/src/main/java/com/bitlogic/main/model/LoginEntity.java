@@ -19,12 +19,14 @@ public class LoginEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer loginId;
-	private String name;
-	private String username;
+	private String firstname;
+	private String lastname;
 	private String password;
 	private String role;
 	private String email;
+	private String gender;
+	private String birthday;
 	@Lob
-	private byte[] photo;
+	private byte[] profile;
 
 }

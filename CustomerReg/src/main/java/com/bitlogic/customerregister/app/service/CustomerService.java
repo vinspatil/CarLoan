@@ -16,4 +16,5 @@ public interface CustomerService {
 	public SummeryBinding findById(Integer id);
 	public Document getDocument(Integer id);
 	public boolean updateSanctionLatter(Integer id, SanctionLetter sl);
+	public SanctionLetter getSanction(Integer id);
 }

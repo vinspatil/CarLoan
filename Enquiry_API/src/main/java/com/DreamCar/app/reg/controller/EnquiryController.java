@@ -42,6 +42,18 @@ public class EnquiryController {
 		return list;
 	}
 	
+	@GetMapping(value="/statusChange/{id}")
+	public void statusChange(@PathVariable int id)
+	{		
+		CustomerEnquiry eq=esi.Enquiry(id);
+		if(eq.getStatus().equals("lowCibil")) {
+			eq.setStatus("rejected");
+			esi.postEnquiry(eq);
+		}
+		
+		
+	}
+	
 	@DeleteMapping(value="/deleteEnquiry/{custId}")
 	public String deleteEnquiry( @PathVariable("custId") Integer id)
 	{	esi.deleteEnquiry(id);

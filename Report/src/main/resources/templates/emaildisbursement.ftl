@@ -5,8 +5,9 @@
 <body>
 <h2>Disbursement</h2>
  
+ <center><img src="https://play-lh.googleusercontent.com/exaf40gywKj0oxHq4s_OgXRMp53vb3YLataZ8-cHJMbqTY40tmHKDjXQpV_o8RRUeo0Q=w416-h235-rw" alt="logo" height="150px" ></center>
 
-Respected Sir/Madam,<br><pre></pre>
+Respected ${name} Sir/Madam,<br><pre></pre>
 
 
 We are informing you that our bank has received your application for Car Loan.<pre></pre>

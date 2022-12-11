@@ -1,4 +1,4 @@
-package com.bitlogic.customerregister.app.serviceimpl;
+package com.DreamCar.app.report.serviceImpl;
 
 import java.awt.Color;
 
@@ -23,13 +23,13 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import com.bitlogic.customerregister.app.binding.Customer;
-import com.bitlogic.customerregister.app.binding.MailSender;
-import com.bitlogic.customerregister.app.model.CustomerDetail;
-import com.bitlogic.customerregister.app.model.EmiCalculation;
-import com.bitlogic.customerregister.app.repository.CustomerRepo;
-import com.bitlogic.customerregister.app.repository.EmiRepo;
-import com.bitlogic.customerregister.app.service.CustomerService;
+import com.DreamCar.app.report.Dto.Customer;
+import com.DreamCar.app.report.Dto.MailSender;
+import com.DreamCar.app.report.model.CustomerDetail;
+import com.DreamCar.app.report.model.EmiCalculation;
+import com.DreamCar.app.report.repository.CustomerRepo;
+import com.DreamCar.app.report.repository.EmiRepo;
+import com.DreamCar.app.report.serviceI.CustomerService;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Font;
@@ -50,7 +50,6 @@ public class ServiceImpl implements CustomerService {
 	@Autowired
 	JavaMailSender jms;
 
-	Document document;
 
 	@Override
 	public Integer saveData(Customer c) {
@@ -82,7 +81,6 @@ public class ServiceImpl implements CustomerService {
 			double dd = princi - emi;
 			// System.out.println(dd);
 			e.setAtatus("Pending");
-
 			princi = dd;
 			k++;
 			EmiCalculation save2 = er.save(e);
@@ -190,7 +188,7 @@ public class ServiceImpl implements CustomerService {
 			helper.setText(e.getTxtmsg());
 			helper.setSubject(e.getSubject());
 
-			helper.addAttachment("doc", (DataSource) document);
+			//helper.addAttachment("doc", (DataSource) document);-----------------------------
 			System.out.println(e.getFromEmail());
 			jms.send(message);
 		} catch (Exception e2) {

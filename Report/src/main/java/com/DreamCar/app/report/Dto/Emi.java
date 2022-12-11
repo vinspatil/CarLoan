@@ -1,4 +1,4 @@
-package com.bitlogic.customerregister.app.binding;
+package com.DreamCar.app.report.Dto;
 
 import java.time.LocalDate;
 

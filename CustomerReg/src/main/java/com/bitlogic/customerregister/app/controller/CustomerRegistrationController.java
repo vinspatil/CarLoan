@@ -88,6 +88,13 @@ public class CustomerRegistrationController {
 		return new ResponseEntity<>(document, HttpStatus.OK);
 				
 	}
+	
+	@GetMapping("/getSanction/{id}")
+	public ResponseEntity<SanctionLetter> getSanctionLetter(@PathVariable Integer id) {
+		SanctionLetter sanction = custo.getSanction(id);
+		return new ResponseEntity<>(sanction, HttpStatus.OK);
+				
+	}
 	@PutMapping(value = "/savesanctionLatter/{id}")
 	public String save(@PathVariable Integer id, @RequestBody SanctionLetter sl)
 	{

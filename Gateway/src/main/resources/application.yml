@@ -31,15 +31,17 @@ spring:
         predicates:
         - Path=/login/**
         
+      - id: report
+        uri: lb://R
+        predicates:
+        - Path=/report/**
+        
       - id: registration
         uri: lb://EMPLOYEE-REGISTRATION
         predicates:
         - Path=/reg/**     
       
-      - id: report
-        uri: lb://REPORT
-        predicates:
-        - Path=/report/**
+
 #
 #     
 #      - id: Indigo
